@@ -1,0 +1,39 @@
+<title> All Users </title>
+
+<div class='col-md-8'>
+  <h3> All Users </h3>
+
+  <div class='row'>
+    <div class='col-md-6'>
+      <%= link_to 'New User', new_user_path, class: 'btn btn-success fa fa-plus' %>
+    </div>
+  </div>
+
+  <div class='d-flex justify-content-center h-100 d-table'>
+    <table class='table table-striped'>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Marital Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.age %></td>
+            <td><%= user.marital_status %></td>
+            <td>
+              <%= link_to 'Edit', edit_user_path(user), class: 'col-md-2' %>
+              <%= link_to 'View', user_path(user), class: 'col-md-2' %>
+              <%= link_to 'Delete', user_path(user), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'col-md-2 delete-user' %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

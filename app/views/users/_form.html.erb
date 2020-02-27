@@ -1,0 +1,30 @@
+<%= form_for @user, class: 'form-horizontal' do |form| %>
+  <div id='dynamic-form-errors' class='fadeIn'></div>
+
+  <div class='form-group col-md-10'>
+    <%= form.label :name, class: 'col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label' %>
+    <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>
+      <%= form.text_field :name, id: 'name-value', class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class='form-group col-md-10'>
+    <%= form.label :age, class: 'col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label' %>
+    <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>
+      <%= form.text_field :age, id: 'age-value', class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class='form-group col-md-10'>
+    <%= form.label 'Marital Status', class: 'col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label' %>
+    <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 dynamic-form-check'>
+      <%= form.select :marital_status, User::MARITAL_STATUSES, {}, { class: 'selectpicker form-control chosen-select' } %>
+    </div>
+  </div>
+
+  <div class='form-group col-md-10'>
+    <div class='col-md-3'>
+      <%= form.submit class: 'form-control btn btn-success' %>
+    </div>
+  </div>
+<% end %>

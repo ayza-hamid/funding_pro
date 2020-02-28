@@ -1,0 +1,49 @@
+<%= form_for @cash_account, class: 'form-horizontal' do |form| %>
+  <div class='form-group col-md-10'>
+    <%= form.label :company_name, class: 'col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label' %>
+    <div class='col-xs-6 col-sm-6 col-md-6 col-lg-6'>
+      <%= form.text_field :compnay_name, id: 'company-name-value', class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class='form-group col-md-10'>
+    <%= form.label :original_account_number, class: 'col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label' %>
+    <div class='col-xs-6 col-sm-6 col-md-6 col-lg-6'>
+      <%= form.text_field :original_account_number, id: 'original-account-number-value', class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class='form-group col-md-10'>
+    <%= form.label :new_account_number, class: 'col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label' %>
+    <div class='col-xs-6 col-sm-6 col-md-6 col-lg-6'>
+      <%= form.text_field :new_account_number, id: 'new-account-number-value', class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class='form-group col-md-10'>
+    <%= form.label :original_owner, class: 'col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label' %>
+    <div class='col-xs-6 col-sm-6 col-md-6 col-lg-6'>
+      <%= form.select :original_owner, CashAccount::ORIGINAL_OWNER, {}, { class: 'selectpicker form-control chosen-select' } %>
+    </div>
+  </div>
+
+  <div class='form-group col-md-10'>
+    <%= form.label :new_owner, class: 'col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label' %>
+    <div class='col-xs-6 col-sm-6 col-md-6 col-lg-6'>
+      <%= form.select :new_owner, CashAccount::NEW_OWNER, {}, { class: 'selectpicker form-control chosen-select' } %>
+    </div>
+  </div>
+
+  <div class='form-group col-md-10'>
+    <div class='row form-group'>
+      <div class='col-md-4'>
+        <%= form.submit class: 'form-control btn btn-success' %>
+      </div>
+    </div>
+    <div class='row form-group'>
+      <div class='col-md-1'>
+        <%= link_to 'Back to list', cash_accounts_path, class: 'btn btn-default' %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,45 @@
+<title> Cash Account Information </title>
+
+<div class='row col-md-8'>
+  <div class='col-md-12'>
+    <h1 class='only-bottom-margin'>Cash Account Information Details</h1>
+  </div>
+</div>
+
+<div class='col-md-8'>
+  <div class='row'>
+    <div class='col-md-12'>
+      <div class='panel panel-default'>
+        <div class='panel-body'>
+          <div class='row'>
+            <div class='col-md-11'>
+              <div class='row'>
+                <div class='col-md-6'>
+                  <div>
+                    <span class='text-muted'><b>Company Name:</b></span> <%= @cash_account.compnay_name %>
+                  </div>
+
+                  <div>
+                    <span class='text-muted'><b>Original Account Number:</b></span> <%= @cash_account.original_account_number %>
+                  </div>
+
+                  <div>
+                    <span class='text-muted'><b>New Account Number:</b></span> <%= @cash_account.new_account_number %>
+                  </div>
+
+                  <div>
+                    <span class='text-muted'><b>Original Owner:</b></span> <%= @cash_account.original_owner %>
+                  </div>
+
+                  <div>
+                    <span class='text-muted'><b>New Owner:</b></span> <%= @cash_account.new_owner %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

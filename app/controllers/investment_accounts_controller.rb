@@ -15,7 +15,7 @@ class InvestmentAccountsController < ApplicationController
     @investment_account = InvestmentAccount.new(investment_account_params)
 
     if @investment_account.save
-      redirect_to investment_accounts_path
+      redirect_to root_path
     end
   end
 
@@ -24,9 +24,9 @@ class InvestmentAccountsController < ApplicationController
 
   def update
     if @investment_account.update(investment_account_params)
-      redirect_to investment_account_path, notice: 'investment_account is successfully updated.'
+      redirect_to root_path, notice: 'Investment Account is successfully updated.'
     else
-      render :edit, alert: 'Sorry! investment_account is not created'
+      render :edit, alert: 'Sorry! Investment Account is not created'
     end
   end
 
@@ -39,10 +39,16 @@ class InvestmentAccountsController < ApplicationController
     send_data pdf.render, filename: "InvestmentAccount_#{@investment_account.id}.pdf", type: 'application/pdf'
   end
 
-  def generate_pdf_collection
+  def generate_pdf_file
     @investment_accounts = InvestmentAccount.all
 
     render pdf: 'report', template: 'assets/asset_report.html.erb'
+  end
+
+  def generate_docx_file
+    @investment_accounts = InvestmentAccount.all
+
+    render docx: 'assets/asset_report', filename: 'newfile.docx'
   end
 
   private

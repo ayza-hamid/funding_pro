@@ -34,6 +34,20 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
+  def generate_pdf_file
+    @investment_accounts = InvestmentAccount.all
+    @cash_accounts = CashAccount.all
+
+    render pdf: 'Asset Report', template: 'assets/asset_report.html.erb'
+  end
+
+  def generate_docx_file
+    @investment_accounts = InvestmentAccount.all
+    @cash_accounts = CashAccount.all
+
+    render docx: 'assets/asset_report', filename: 'Asset Report'
+  end
+
   private
 
   def set_user

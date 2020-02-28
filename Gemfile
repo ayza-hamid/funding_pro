@@ -19,6 +19,7 @@ gem 'jquery-rails'
 gem 'caracal', '~> 1.4', '>= 1.4.1'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem 'htmltoword'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

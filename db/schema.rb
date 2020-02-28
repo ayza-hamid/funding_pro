@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2020_02_28_081928) do
 
-  create_table "cash_accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "cash_accounts", force: :cascade do |t|
     t.string "compnay_name"
     t.string "original_account_number"
     t.string "new_account_number"
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_02_28_081928) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "investment_accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "investment_accounts", force: :cascade do |t|
     t.string "compnay_name"
     t.string "original_account_number"
     t.string "new_account_number"
@@ -32,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_02_28_081928) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name"
     t.integer "age"
     t.string "marital_status"

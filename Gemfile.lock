@@ -122,6 +122,7 @@ GEM
     nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     pdf-core (0.7.0)
+    pg (1.2.2)
     prawn (2.2.2)
       pdf-core (~> 0.7.0)
       ttfunk (~> 1.5)
@@ -246,6 +247,7 @@ DEPENDENCIES
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   mysql2 (>= 0.4.4)
+  pg
   prawn
   prawn-table
   puma (~> 3.11)

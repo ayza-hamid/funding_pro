@@ -13,11 +13,10 @@ Rails.application.routes.draw do
   resources :investment_accounts do
     member do
       get 'generate_pdf'
+      get 'generate_docx'
     end
     collection do
       get 'generate_pdf_file', defaults: { format: 'pdf' }
-    end
-    collection do
       get 'generate_docx_file'
     end
   end
@@ -25,11 +24,10 @@ Rails.application.routes.draw do
   resources :cash_accounts do
     member do
       get 'generate_pdf'
+      get 'generate_docx'
     end
     collection do
       get 'generate_pdf_file', defaults: { format: 'pdf' }
-    end
-    collection do
       get 'generate_docx_file'
     end
   end

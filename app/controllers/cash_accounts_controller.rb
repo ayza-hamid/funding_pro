@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CashAccountsController < ApplicationController
-  before_action :cash_account, only: %i[show edit update destroy generate_pdf]
+  before_action :cash_account, only: %i[show edit update destroy generate_pdf generate_docx]
 
   def index
     @cash_accounts = CashAccount.all
@@ -35,20 +35,11 @@ class CashAccountsController < ApplicationController
   end
 
   def generate_pdf
-    pdf = CashAccount.create_pdf_file(@cash_account)
-    send_data pdf.render, filename: "CashAccount_#{@cash_account.id}.pdf", type: 'application/pdf'
+    render pdf: "CashAccount_#{@cash_account.id}", template: 'cash_accounts/cash_account', layout: 'application'
   end
 
-  def generate_pdf_file
-    @cash_accounts = CashAccount.all
-
-    render pdf: 'report', template: 'assets/asset_report.html.erb'
-  end
-
-  def generate_docx_file
-    @cash_accounts = CashAccount.all
-
-    render docx: 'assets/asset_report', filename: "CashAccount_#{@cash_account.id}.pdf"
+  def generate_docx
+    render docx: 'cash_accounts/cash_account', filename: "Cash_Account_#{@cash_account.id}"
   end
 
   private

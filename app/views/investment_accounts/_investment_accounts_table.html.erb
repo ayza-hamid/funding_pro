@@ -32,7 +32,8 @@
               <%= link_to 'Edit', edit_investment_account_path(investment_account), class: 'col-md-2' %>
               <%= link_to 'View', investment_account_path(investment_account), class: 'col-md-2' %>
               <%= link_to 'Delete', investment_account_path(investment_account), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'col-md-2 delete-investment-account' %>
-              <%= link_to 'Generate PDF', generate_pdf_investment_account_path(investment_account), class: 'col-md-2' %>
+              <%= link_to 'Generate PDF', generate_pdf_investment_account_path(investment_account), class: 'col-md-2', target: :_blank %>
+              <%= link_to 'Generate Docx', generate_docx_investment_account_path(investment_account), class: 'col-md-2', target: :_blank %>
             </td>
           </tr>
         <% end %>

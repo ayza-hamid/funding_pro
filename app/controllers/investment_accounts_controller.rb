@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class InvestmentAccountsController < ApplicationController
-  before_action :set_investment_account, only: %i[show edit update destroy generate_pdf]
+  before_action :set_investment_account, only: %i[show edit update destroy generate_pdf generate_docx]
 
   def index
     @investment_accounts = InvestmentAccount.all
@@ -39,16 +39,8 @@ class InvestmentAccountsController < ApplicationController
     send_data pdf.render, filename: "InvestmentAccount_#{@investment_account.id}.pdf", type: 'application/pdf'
   end
 
-  def generate_pdf_file
-    @investment_accounts = InvestmentAccount.all
-
-    render pdf: 'report', template: 'assets/asset_report.html.erb'
-  end
-
-  def generate_docx_file
-    @investment_accounts = InvestmentAccount.all
-
-    render docx: 'assets/asset_report', filename: 'newfile.docx'
+  def generate_docx
+    render docx: 'investment_accounts/investment_account', filename: "Investment_Account_#{@investment_account.id}"
   end
 
   private

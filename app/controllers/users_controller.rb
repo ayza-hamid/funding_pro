@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     @investment_accounts = InvestmentAccount.all
     @cash_accounts = CashAccount.all
 
-    render pdf: 'Asset Report', template: 'assets/asset_report.html.erb'
+    render pdf: 'Asset Report', template: 'assets/asset_report.html.erb', layout: 'application'
   end
 
   def generate_docx_file

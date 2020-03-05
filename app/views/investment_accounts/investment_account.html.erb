@@ -1,0 +1,29 @@
+<div class='col-md-8'>
+  <h1> Investment Accounts </h1>
+  <hr>
+
+  <div class='d-flex justify-content-center h-100 d-table'>
+    <table class='table table-striped' >
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Original Account Number</th>
+          <th>New Account Number</th>
+          <th>Original Owner</th>
+          <th>New Owner</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><%= @investment_account.compnay_name %></td>
+          <td><%= @investment_account.original_account_number %></td>
+          <td><%= @investment_account.new_account_number %></td>
+          <td><%= @investment_account.original_owner %></td>
+          <td><%= @investment_account.new_owner %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <hr>
+</div>

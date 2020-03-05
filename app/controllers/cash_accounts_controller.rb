@@ -35,7 +35,7 @@ class CashAccountsController < ApplicationController
   end
 
   def generate_pdf
-    render pdf: "CashAccount_#{@cash_account.id}", template: 'cash_accounts/cash_account', layout: 'application'
+    render pdf: "Cash_Account_#{@cash_account.id}", template: 'cash_accounts/cash_account', layout: 'application'
   end
 
   def generate_docx

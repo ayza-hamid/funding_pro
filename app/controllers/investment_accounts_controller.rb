@@ -35,8 +35,7 @@ class InvestmentAccountsController < ApplicationController
   end
 
   def generate_pdf
-    pdf = InvestmentAccount.create_pdf_file(@investment_account)
-    send_data pdf.render, filename: "InvestmentAccount_#{@investment_account.id}.pdf", type: 'application/pdf'
+    render pdf: "Investment_Account_#{@investment_account.id}", template: 'investment_accounts/investment_account', layout: 'application'
   end
 
   def generate_docx

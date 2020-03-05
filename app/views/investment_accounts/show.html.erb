@@ -1,40 +1,78 @@
 <title> Investment Account Information </title>
 
-<div class='row col-md-8'>
-  <div class='col-md-12'>
-    <h1 class='only-bottom-margin'>Investment Account Information Details</h1>
-  </div>
-</div>
-
-<div class='col-md-8'>
-  <div class='row'>
+<div class='row col-md-12'>
+  <div class='row col-md-8'>
     <div class='col-md-12'>
-      <div class='panel panel-default'>
-        <div class='panel-body'>
-          <div class='row'>
-            <div class='col-md-11'>
-              <div class='row'>
-                <div class='col-md-6'>
-                  <div>
-                    <span class='text-muted'><b>Company Name:</b></span> <%= @investment_account.compnay_name %>
-                  </div>
+      <h3 class='only-bottom-margin'>Investment Account Information Details</h3>
+    </div>
+  </div>
 
-                  <div>
-                    <span class='text-muted'><b>Original Account Number:</b></span> <%= @investment_account.original_account_number %>
-                  </div>
+  <div class='col-md-8'>
+    <div class='row'>
+      <div class='col-md-12'>
+        <div class='panel panel-default'>
+          <div class='panel-body'>
+            <div class='row'>
+              <div class='col-md-11'>
+                <div class='row'>
+                  <div class='col-md-6'>
+                    <div>
+                      <span class='text-muted'><b>Company Name:</b></span> <%= @investment_account.compnay_name %>
+                    </div>
 
-                  <div>
-                    <span class='text-muted'><b>New Account Number:</b></span> <%= @investment_account.new_account_number %>
-                  </div>
+                    <div>
+                      <span class='text-muted'><b>Original Account Number:</b></span> <%= @investment_account.original_account_number %>
+                    </div>
 
-                  <div>
-                    <span class='text-muted'><b>Original Owner:</b></span> <%= @investment_account.original_owner %>
-                  </div>
+                    <div>
+                      <span class='text-muted'><b>New Account Number:</b></span> <%= @investment_account.new_account_number %>
+                    </div>
 
-                  <div>
-                    <span class='text-muted'><b>New Owner:</b></span> <%= @investment_account.new_owner %>
+                    <div>
+                      <span class='text-muted'><b>Original Owner:</b></span> <%= @investment_account.original_owner %>
+                    </div>
+
+                    <div>
+                      <span class='text-muted'><b>New Owner:</b></span> <%= @investment_account.new_owner %>
+                    </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='form-group col-md-10'>
+    <div class='row form-group'>
+      <div class='col-md-6'>
+        <div class='row mt-mb-2'>
+          <div class='col-md-4'>
+            <div class='row'>
+              <div class='col-md-4'>
+                <%= link_to 'Generate PDF - Asset Reports', generate_pdf_file_users_path(@cash_accounts), class: 'btn btn-warning', target: :_blank %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='row mt-mb-2'>
+          <div class='col-md-4'>
+            <div class='row'>
+              <div class='col-md-4'>
+                <%= link_to 'Generate Docx - Asset Reports', generate_docx_file_users_path(@cash_accounts), class: 'btn btn-primary', target: :_blank %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class='col-md-4'>
+            <div class='row'>
+              <div class='col-md-4'>
+                <%= link_to 'Back to list', root_path, class: 'btn btn-default' %>
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 <title> Investment Account Information </title>
 
-<div class='row col-md-12'>
+<div class='row col-md-12 mt-mb-2'>
   <div class='row col-md-8'>
     <div class='col-md-12'>
       <h3 class='only-bottom-margin'>Investment Account Information Details</h3>
@@ -51,8 +51,8 @@
         <div class='row mt-mb-2'>
           <div class='col-md-4'>
             <div class='row'>
-              <div class='col-md-4'>
-                <%= link_to 'Generate PDF - Asset Reports', generate_pdf_file_users_path(@cash_accounts), class: 'btn btn-warning', target: :_blank %>
+              <div class='col-md-5'>
+                <%= link_to 'Generate PDF', generate_pdf_investment_account_path(@investment_account), class: 'btn btn-warning', target: :_blank %>
               </div>
             </div>
           </div>
@@ -61,8 +61,8 @@
         <div class='row mt-mb-2'>
           <div class='col-md-4'>
             <div class='row'>
-              <div class='col-md-4'>
-                <%= link_to 'Generate Docx - Asset Reports', generate_docx_file_users_path(@cash_accounts), class: 'btn btn-primary', target: :_blank %>
+              <div class='col-md-5'>
+                <%= link_to 'Generate Docx', generate_docx_investment_account_path(@investment_account), class: 'btn btn-primary', target: :_blank %>
               </div>
             </div>
           </div>

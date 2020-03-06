@@ -31,7 +31,11 @@ class CashAccountsController < ApplicationController
   end
 
   def destroy
-    @cash_account.destroy
+    if @cash_account.destroy
+      respond_to do |format|
+        format.js { render :destroy }
+      end
+    end
   end
 
   def generate_pdf

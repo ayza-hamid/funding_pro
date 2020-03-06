@@ -21,6 +21,7 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'htmltoword'
 gem 'pg'
+gem 'font-awesome-rails'
 gem 'rails_12factor'
 
 group :development, :test do

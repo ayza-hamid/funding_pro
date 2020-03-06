@@ -48,6 +48,6 @@ test:
 #
 production:
   <<: *default
-  database: funding_pro_production
-  username: funding_pro
-  password: <%= ENV['FUNDING_PRO_DATABASE_PASSWORD'] %>
+  database: funding_pro_development
+  username: postgres
+  password:

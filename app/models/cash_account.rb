@@ -5,8 +5,8 @@ class CashAccount < ApplicationRecord
     'Client': 'Client',
     'Spouse': 'Spouse',
     'JT Client': 'JT Spouses',
-    'RLT Client':'RLT Client',
-    'RLT': 'RLT Spouse',
+    'RLT Client': 'RLT Client',
+    'RLT Spouse': 'RLT Spouse',
     'Other Entity': 'Other Entity'
   }
 
@@ -15,7 +15,7 @@ class CashAccount < ApplicationRecord
     'Undecided': 'Undecided',
     'Not Funded Per Client': 'NFPC',
     'Not Fundable': 'NF',
-    'RLT Client':'RLT Client',
+    'RLT Client': 'RLT Client',
     'RLT': 'RLT Spouse',
     'Other Entity': 'Other Entity'
   }

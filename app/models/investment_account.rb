@@ -6,7 +6,7 @@ class InvestmentAccount < ApplicationRecord
     'Spouse': 'Spouse',
     'JT Client': 'JT Spouses',
     'RLT Client':'RLT Client',
-    'RLT': 'RLT Spouse',
+    'RLT Spouse': 'RLT Spouse',
     'Other Entity': 'Other Entity'
   }
 

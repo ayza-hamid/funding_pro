@@ -23,6 +23,8 @@ gem 'htmltoword'
 gem 'pg'
 gem 'font-awesome-rails'
 gem 'rails_12factor'
+gem 'sablon', '~> 0.3.2'
+gem 'fillable-pdf'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

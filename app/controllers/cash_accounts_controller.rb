@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CashAccountsController < ApplicationController
-  before_action :cash_account, only: %i[show edit update destroy generate_pdf generate_docx]
+  before_action :cash_account, only: %i[show edit update destroy generate_pdf generate_docx generate_fillable_pdf]
 
   def index
     @cash_accounts = CashAccount.all
@@ -44,6 +44,13 @@ class CashAccountsController < ApplicationController
 
   def generate_docx
     render docx: 'cash_accounts/cash_account', filename: "Cash_Account_#{@cash_account.id}"
+  end
+
+  def generate_fillable_pdf
+    pdf = FillablePDF.new 'lib/templates/cash_fillable_pdf.pdf'
+    CashAccount.fill_pdf(pdf, @cash_account)
+
+    send_file(('output/cash_fillable_pdf_output.pdf'), type: "application/pdf")
   end
 
   private

@@ -81,4 +81,14 @@ class CashAccount < ApplicationRecord
 
     pdf
   end
+
+  def self.fill_pdf(pdf, cash_account)
+    pdf.set_fields(company_name: field_value(cash_account.compnay_name), original_account_number: field_value(cash_account.original_account_number), new_account_number: field_value(cash_account.new_account_number), original_owner: field_value(cash_account.original_owner), new_owner: field_value(cash_account.new_owner))
+
+    pdf.save_as('output/cash_fillable_pdf_output.pdf')
+  end
+
+  def self.field_value(cash_account_attribute)
+    cash_account_attribute.present? ? cash_account_attribute : '-'
+  end
 end

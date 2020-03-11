@@ -35,6 +35,7 @@
                 <%= link_to 'Delete', cash_account_path(cash_account), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'col-md-2 delete-cash-account' %>
                 <%= link_to 'Generate PDF', generate_pdf_cash_account_path(cash_account), class: 'col-md-2', target: :_blank %>
                 <%= link_to 'Generate Docx', generate_docx_cash_account_path(cash_account), class: 'col-md-2', target: :_blank %>
+                <%= link_to 'Generate Editable Pdf', generate_fillable_pdf_cash_account_path(cash_account), class: 'col-md-2', target: :_blank %>
               </td>
             </tr>
           <% end %>

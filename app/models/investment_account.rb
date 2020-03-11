@@ -81,4 +81,14 @@ class InvestmentAccount < ApplicationRecord
 
     pdf
   end
+
+  def self.fill_pdf(pdf, investment_account)
+    pdf.set_fields(company_name: field_value(investment_account.compnay_name), original_account_number: field_value(investment_account.original_account_number), new_account_number: field_value(investment_account.new_account_number), original_owner: field_value(investment_account.original_owner), new_owner: field_value(investment_account.new_owner))
+
+    pdf.save_as('output/investment_fillable_pdf_output.pdf')
+  end
+
+  def self.field_value(investment_account_attribute)
+    investment_account_attribute.present? ? investment_account_attribute : '-'
+  end
 end

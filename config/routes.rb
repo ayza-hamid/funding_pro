@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       get 'generate_pdf_file', defaults: { format: 'pdf' }
-    end
-    collection do
       get 'generate_docx_file'
     end
   end
@@ -14,6 +12,7 @@ Rails.application.routes.draw do
     member do
       get 'generate_pdf'
       get 'generate_docx'
+      get 'generate_fillable_pdf'
     end
     collection do
       get 'generate_pdf_file', defaults: { format: 'pdf' }
@@ -25,6 +24,7 @@ Rails.application.routes.draw do
     member do
       get 'generate_pdf'
       get 'generate_docx'
+      get 'generate_fillable_pdf'
     end
     collection do
       get 'generate_pdf_file', defaults: { format: 'pdf' }

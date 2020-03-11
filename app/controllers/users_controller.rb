@@ -34,14 +34,14 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
-  def generate_pdf_file
+  def export_pdf_file
     @investment_accounts = InvestmentAccount.all
     @cash_accounts = CashAccount.all
 
     render pdf: 'Asset Report', template: 'assets/asset_report.html.erb', layout: 'application'
   end
 
-  def generate_docx_file
+  def export_docx_file
     @investment_accounts = InvestmentAccount.all
     @cash_accounts = CashAccount.all
 

@@ -52,7 +52,7 @@
           <div class='col-md-4'>
             <div class='row'>
               <div class='col-md-5'>
-                <%= link_to 'Generate PDF', generate_pdf_cash_account_path(@cash_account), class: 'btn btn-warning', target: :_blank %>
+                <%= link_to 'Export PDF', export_pdf_cash_account_path(@cash_account), class: 'btn btn-warning', target: :_blank %>
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@
           <div class='col-md-4'>
             <div class='row'>
               <div class='col-md-5'>
-                <%= link_to 'Generate Docx', generate_docx_cash_account_path(@cash_account), class: 'btn btn-primary', target: :_blank %>
+                <%= link_to 'Export Docx', export_docx_cash_account_path(@cash_account), class: 'btn btn-primary', target: :_blank %>
               </div>
             </div>
           </div>

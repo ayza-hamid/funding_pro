@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class InvestmentAccountsController < ApplicationController
-  before_action :set_investment_account, only: %i[show edit update destroy generate_pdf generate_docx generate_fillable_pdf]
+  before_action :set_investment_account, only: %i[show edit update destroy export_pdf export_docx export_fillable_pdf]
 
   def index
     @investment_accounts = InvestmentAccount.all
@@ -34,15 +34,15 @@ class InvestmentAccountsController < ApplicationController
     @investment_account.destroy
   end
 
-  def generate_pdf
+  def export_pdf
     render pdf: "Investment_Account_#{@investment_account.id}", template: 'investment_accounts/investment_account', layout: 'application'
   end
 
-  def generate_docx
+  def export_docx
     render docx: 'investment_accounts/investment_account', filename: "Investment_Account_#{@investment_account.id}"
   end
 
-  def generate_fillable_pdf
+  def export_fillable_pdf
     pdf = FillablePDF.new 'lib/templates/investment_fillable_pdf.pdf'
     InvestmentAccount.fill_pdf(pdf, @investment_account)
     send_file(('output/investment_fillable_pdf_output.pdf'), type: "application/pdf")

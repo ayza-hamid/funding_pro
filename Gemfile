@@ -25,7 +25,9 @@ gem 'font-awesome-rails'
 gem 'rails_12factor'
 gem 'sablon', '~> 0.3.2'
 gem 'fillable-pdf'
-
+gem 'mini_magick', '~> 4.8'
+gem 'carrierwave', '~> 2.0'
+gem 'ckeditor'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end

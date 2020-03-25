@@ -1,9 +1,10 @@
 <div class='col-md-12 light-blue-background'>
-  <h3 class='align-center'> All Account Information </h3>
+  <h3 class='align-center'> Cash Account Information </h3>
 
   <div class='row'>
     <div class='col-md-6'>
       <%= link_to 'New Cash Account', new_cash_account_path, class: 'btn btn-success fa fa-plus' %>
+      <%= link_to 'Edit Cash Account Template', edit_template_cash_account_path(CashAccount.first), class: 'btn btn-danger' %>
     </div>
   </div>
 
@@ -36,7 +37,6 @@
                 <%= link_to 'Export PDF', export_pdf_cash_account_path(cash_account), class: 'col-md-2', target: :_blank %>
                 <%= link_to 'Export Docx', export_docx_cash_account_path(cash_account), class: 'col-md-2', target: :_blank %>
                 <%= link_to 'Export Editable Pdf', export_fillable_pdf_cash_account_path(cash_account), class: 'col-md-2', target: :_blank %>
-              <%= link_to 'Edit Template', edit_template_cash_account_path(cash_account), class: 'col-md-2' %>
               </td>
             </tr>
           <% end %>

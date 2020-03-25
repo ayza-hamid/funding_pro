@@ -4,6 +4,7 @@
   <div class='row'>
     <div class='col-md-6'>
       <%= link_to 'New Investment Account', new_investment_account_path, class: 'btn btn-success fa fa-plus' %>
+      <%= link_to 'Edit Investment Account Template', edit_template_investment_account_path(InvestmentAccount.first), class: 'btn btn-danger' %>
     </div>
   </div>
 
@@ -35,7 +36,6 @@
               <%= link_to 'Export PDF', export_pdf_investment_account_path(investment_account), class: 'col-md-2', target: :_blank %>
               <%= link_to 'Export Docx', export_docx_investment_account_path(investment_account), class: 'col-md-2', target: :_blank %>
               <%= link_to 'Export Editable Pdf', export_fillable_pdf_investment_account_path(investment_account), class: 'col-md-2', target: :_blank %>
-              <%= link_to 'Edit Template', edit_template_investment_account_path(investment_account), class: 'col-md-2' %>
             </td>
           </tr>
         <% end %>

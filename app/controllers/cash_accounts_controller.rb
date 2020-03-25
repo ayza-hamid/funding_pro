@@ -58,7 +58,7 @@ class CashAccountsController < ApplicationController
   def update_template
     updated_template = params[:cash_account][:content]
     File.open("app/views/cash_accounts/cash_account.html.erb", "w") { |file| file.puts CGI.unescapeHTML(updated_template).html_safe }
-    redirect_to cash_account_path
+    redirect_to root_path
   end
 
   private

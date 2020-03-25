@@ -1,4 +1,4 @@
-<div class='col-md-10 light-blue-background'>
+<div class='col-md-12 light-blue-background'>
   <h3 class='align-center'> Investment Account Information </h3>
 
   <div class='row'>
@@ -29,12 +29,13 @@
             <td><%= investment_account.original_owner %></td>
             <td><%= investment_account.new_owner %></td>
             <td>
-              <%= link_to 'Edit', edit_investment_account_path(investment_account), class: 'col-md-2' %>
-              <%= link_to 'View', investment_account_path(investment_account), class: 'col-md-2' %>
-              <%= link_to 'Delete', investment_account_path(investment_account), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'col-md-2 delete-investment-account' %>
+              <%= link_to 'Edit', edit_investment_account_path(investment_account), class: 'col-md-1' %>
+              <%= link_to 'View', investment_account_path(investment_account), class: 'col-md-1' %>
+              <%= link_to 'Delete', investment_account_path(investment_account), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'col-md-1 delete-investment-account' %>
               <%= link_to 'Export PDF', export_pdf_investment_account_path(investment_account), class: 'col-md-2', target: :_blank %>
               <%= link_to 'Export Docx', export_docx_investment_account_path(investment_account), class: 'col-md-2', target: :_blank %>
               <%= link_to 'Export Editable Pdf', export_fillable_pdf_investment_account_path(investment_account), class: 'col-md-2', target: :_blank %>
+              <%= link_to 'Edit Template', edit_template_investment_account_path(investment_account), class: 'col-md-2' %>
             </td>
           </tr>
         <% end %>

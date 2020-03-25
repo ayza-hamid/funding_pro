@@ -1,4 +1,4 @@
-<div class='col-md-10 light-blue-background'>
+<div class='col-md-12 light-blue-background'>
   <h3 class='align-center'> All Account Information </h3>
 
   <div class='row'>
@@ -30,12 +30,13 @@
               <td><%= cash_account.original_owner %></td>
               <td><%= cash_account.new_owner %></td>
               <td>
-                <%= link_to 'Edit', edit_cash_account_path(cash_account), class: 'col-md-2' %>
-                <%= link_to 'View', cash_account_path(cash_account), class: 'col-md-2' %>
-                <%= link_to 'Delete', cash_account_path(cash_account), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'col-md-2 delete-cash-account' %>
+                <%= link_to 'Edit', edit_cash_account_path(cash_account), class: 'col-md-1' %>
+                <%= link_to 'View', cash_account_path(cash_account), class: 'col-md-1' %>
+                <%= link_to 'Delete', cash_account_path(cash_account), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'col-md-1 delete-cash-account' %>
                 <%= link_to 'Export PDF', export_pdf_cash_account_path(cash_account), class: 'col-md-2', target: :_blank %>
                 <%= link_to 'Export Docx', export_docx_cash_account_path(cash_account), class: 'col-md-2', target: :_blank %>
                 <%= link_to 'Export Editable Pdf', export_fillable_pdf_cash_account_path(cash_account), class: 'col-md-2', target: :_blank %>
+              <%= link_to 'Edit Template', edit_template_cash_account_path(cash_account), class: 'col-md-2' %>
               </td>
             </tr>
           <% end %>

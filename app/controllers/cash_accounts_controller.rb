@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CashAccountsController < ApplicationController
-  before_action :cash_account, only: %i[show edit update destroy export_pdf export_docx export_fillable_pdf]
+  before_action :cash_account, only: %i[show edit update destroy export_pdf edit_template update_template export_docx export_fillable_pdf]
 
   def index
     @cash_accounts = CashAccount.all
@@ -51,6 +51,14 @@ class CashAccountsController < ApplicationController
     CashAccount.fill_pdf(pdf, @cash_account)
 
     send_file(('output/cash_fillable_pdf_output.pdf'), type: "application/pdf")
+  end
+
+  def edit_template; end
+
+  def update_template
+    updated_template = params[:cash_account][:content]
+    File.open("app/views/cash_accounts/cash_account.html.erb", "w") { |file| file.puts CGI.unescapeHTML(updated_template).html_safe }
+    redirect_to cash_account_path
   end
 
   private

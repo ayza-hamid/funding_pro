@@ -20,5 +20,23 @@
 }
 
 .color-red {
-  color: red;
+  color: red !important;
+}
+
+.color-blue {
+  color: blue !important;
+}
+
+table#demotable {
+  table-layout: fixed;
+  width: 100%;
+}
+
+table#demotable td,
+table#demotable th {
+  width: 25%;padding: 5px;
+}
+
+.ckeditor .color-blue {
+  color: blue;
 }

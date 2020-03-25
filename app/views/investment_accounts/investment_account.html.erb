@@ -3,7 +3,7 @@
   <hr>
 
   <div class='d-flex justify-content-center h-100 d-table'>
-    <table class='table table-striped' >
+    <table class='table table-striped'>
       <thead>
         <tr>
           <th>Company Name</th>
@@ -16,14 +16,13 @@
 
       <tbody>
         <tr>
-          <td class="<%= fetch_color(@investment_account.compnay_name) %>"><span class="h" data-style="<%= fetch_highlight_color(@investment_account.compnay_name) %>"><%= fetch_name(@investment_account.compnay_name) %></span></td>
-          <td class="<%= fetch_color(@investment_account.original_account_number) %>"><span class="h" data-style="<%= fetch_highlight_color(@investment_account.original_account_number) %>"><%= fetch_name(@investment_account.original_account_number) %></span></td>
-          <td class="<%= fetch_color(@investment_account.new_account_number) %>"><span class="h" data-style="<%= fetch_highlight_color(@investment_account.new_account_number) %>"><%= fetch_name(@investment_account.new_account_number) %></span></td>
-          <td class="<%= fetch_color(@investment_account.original_owner) %>"><span class="h" data-style="<%= fetch_highlight_color(@investment_account.original_owner) %>"><%= fetch_name(@investment_account.original_owner) %></span></td>
-          <td class="<%= fetch_color(@investment_account.new_owner) %>"><span class="h" data-style="<%= fetch_highlight_color(@investment_account.new_owner) %>"><%= fetch_name(@investment_account.new_owner) %></span></td>
+          <td style="color:blue;border:1px solid black;" class="<%= fetch_color(@investment_account.compnay_name) %>"><span class="h" data-style="<%= fetch_highlight_color(@investment_account.compnay_name) %>"><%= fetch_name(@investment_account.compnay_name) %></span></td>
+          <td style="color:blue;border:1px solid black;" class="<%= fetch_color(@investment_account.original_account_number) %>"><span class="h" data-style="<%= fetch_highlight_color(@investment_account.original_account_number) %>"><%= fetch_name(@investment_account.original_account_number) %></span></td>
+          <td style="color:blue;border:1px solid black;" class="<%= fetch_color(@investment_account.new_account_number) %>"><span class="h" data-style="<%= fetch_highlight_color(@investment_account.new_account_number) %>"><%= fetch_name(@investment_account.new_account_number) %></span></td>
+          <td style="color:blue;border:1px solid black;" class="<%= fetch_color(@investment_account.original_owner) %>"><span class="h" data-style="<%= fetch_highlight_color(@investment_account.original_owner) %>"><%= fetch_name(@investment_account.original_owner) %></span></td>
+          <td style="color:blue;border:1px solid black;" class="<%= fetch_color(@investment_account.new_owner) %>"><span class="h" data-style="<%= fetch_highlight_color(@investment_account.new_owner) %>"><%= fetch_name(@investment_account.new_owner) %></span></td>
         </tr>
       </tbody>
     </table>
   </div>
-  <hr>
 </div>

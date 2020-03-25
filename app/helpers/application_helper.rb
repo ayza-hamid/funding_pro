@@ -6,7 +6,7 @@ module ApplicationHelper
   end
 
   def fetch_color(asset_attribute)
-    asset_attribute.present? ? 'color-black' : 'color-red'
+    asset_attribute.present? ? 'color-blue' : 'color-red'
   end
 
   def fetch_highlight_color(asset_attribute)

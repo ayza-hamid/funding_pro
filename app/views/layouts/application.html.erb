@@ -8,8 +8,24 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= wicked_pdf_stylesheet_link_tag 'application' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application' %>
     <%= javascript_include_tag Ckeditor.cdn_url %>
+
+    <script>
+      (function($) {
+      jQuery.fn.cke_resize = function() {
+         return this.each(function() {
+            var $this = $(this);
+            var height = 700;
+            $this.next("div.cke").find(".cke_contents").css("height", height);
+         });
+      };
+      })(jQuery);
+
+      CKEDITOR.on( 'instanceReady', function(){
+        $("textarea.ckeditor").cke_resize();
+      })
+    </script>
   </head>
 
   <body>
